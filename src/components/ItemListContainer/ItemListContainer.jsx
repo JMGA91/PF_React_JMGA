@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+
 import './ItemListContainer.css'
 
 
@@ -12,10 +14,10 @@ const ItemListContainer = ({ productsData }) => {
                         <Card.Img variant="top" src={ products.thumbnail } />
                         <Card.Body>
                             <Card.Title>{ products.title }</Card.Title>
-                            <Card.Text>
-                            
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            {/* <Card.Text></Card.Text> */}
+                            <Link to={`/item/${products.id}`}>
+                                <Button variant="primary">View product</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 )

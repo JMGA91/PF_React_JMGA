@@ -4,7 +4,7 @@ import { getCategory } from "../services";
 export const useGetCategory = (category) => {
     const [categoryData, setCategoryData] = useState([]);
 
-    console.log(`categoryData en hook: `, categoryData);
+    /* console.log(`categoryData en hook: `, categoryData); */
 
     useEffect (() => {
         getCategory(category)
