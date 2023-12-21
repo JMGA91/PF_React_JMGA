@@ -50,17 +50,17 @@ export const useGetCategories = () => {
 }
 
 export const useGetProductsByCategory = (id) => {
-    const [categories, setCategories] = useState([]);
+    const [productsData, setProductData] = useState([]);
 
     useEffect (() => {
-        getProductsByCategory()
+        getProductsByCategory(id)
             .then ((response) =>{
-                setCategories(response.data)
+                setProductData(response.data.products)
             })
             .catch((error) => {
                 console.log(error);
             })
     },[id]);
 
-    return { categories };
+    return { productsData };
 }

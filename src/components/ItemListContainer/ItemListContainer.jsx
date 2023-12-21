@@ -3,24 +3,24 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-import './ItemListContainer.css'
-
+import './ItemListContainer.css';
 
 const ItemListContainer = ({ productsData }) => {
     return (
         <div className="ItemListContainer">
-            {productsData.map((product) => (
-                <Card key={product.id} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={product.thumbnail} />
-                    <Card.Body>
-                        <Card.Title>{product.title}</Card.Title>
-                        {/* <Card.Text></Card.Text> */}
-                        <Link to={`/item/${product.id}`}>
-                            <Button variant="primary">View product</Button>
-                        </Link>
-                    </Card.Body>
-                </Card>
-            ))}
+            {productsData.map ((products)=>{
+                return (
+                    <Card key={products.id} style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={ products.thumbnail } />
+                        <Card.Body>
+                            <Card.Title>{ products.title }</Card.Title>
+                            <Link to={`/item/${products.id}`}>
+                                <Button variant="primary">View product</Button>
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                );
+            })}
         </div>
     );
 };
