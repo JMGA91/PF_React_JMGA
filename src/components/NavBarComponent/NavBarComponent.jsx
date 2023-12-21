@@ -20,8 +20,9 @@ const NavBarComponent = () => {
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
                 {categories.map((category, index) => {
                     return (
-                      <NavDropdown.Item key= {index}
-                        ><Link key={index} to={`/category/${category}`}>{category}</Link>
+                      <NavDropdown.Item
+                      key={index} href={`/category/${category}`}>
+                        {category}
                       </NavDropdown.Item>
                     );
                   })
