@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../services";
+import { getCategories, getProductbyId, getProducts, getProductsByCategory} from "../services";
 
 export const useGetProducts = (limit) => {
     const [productsData, setProductsData] = useState([]);
-
-    /* console.log(`productsData en hook: `, productsData); */
 
     useEffect (() => {
         getProducts(limit)
@@ -17,4 +15,52 @@ export const useGetProducts = (limit) => {
     },[]);
 
     return { productsData };
+}
+
+export const useGetProductById = (id) => {
+    const [productData, setProductData] = useState([]);
+
+    useEffect (() => {
+        getProductbyId(id)
+            .then ((response) =>{
+                setProductData(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    },[id]);
+
+    return { productData };
+}
+
+export const useGetCategories = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect (() => {
+        getCategories()
+            .then ((response) =>{
+                setCategories(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    },[]);
+
+    return { categories };
+}
+
+export const useGetProductsByCategory = (id) => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect (() => {
+        getProductsByCategory()
+            .then ((response) =>{
+                setCategories(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    },[id]);
+
+    return { categories };
 }
