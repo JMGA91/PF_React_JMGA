@@ -9,7 +9,7 @@ const CartWidget = () => {
     const totalQuantity = count.reduce ((total, item) => total + item.quantity, 0);
 
     return (
-        <Link>
+        <Link to={"/Cart"}>
                 <div className="cartWidgetContainer">
                 🛒
                 <span style={{fontWeight:"bold", fontSize: "1.3rem"}}>
