@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import ShoppingCartComponent from '../ShoppingCartComponent/ShoppingCartComponent';
+import CartWidget from './CartWidget';
 
 import { Link } from 'react-router-dom';
 import { useGetCategories } from '../../hooks/useProduct';
@@ -20,17 +20,17 @@ const NavBarComponent = () => {
               <NavDropdown title="Categorias" id="basic-nav-dropdown">
                 {categories.map((category, index) => {
                     return (
-                      <NavDropdown.Item
-                      key={index} href={`/category/${category}`}>
-                        {category}
-                      </NavDropdown.Item>
+                      <Link
+                        key={index} to={`/category/${category}`} className='dropdown-item'>
+                          {category}
+                      </Link>
                     );
                   })
                 }
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <ShoppingCartComponent/>
+          <CartWidget/>
         </Container>
       </Navbar>
     );

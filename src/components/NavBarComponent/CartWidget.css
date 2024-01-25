@@ -1,11 +1,11 @@
-.ShoppingCartComponent {
+.cartWidgetContainer {
     display: flex;
     width: 35px;
     justify-content: space-between;
     align-items: center;
 }
 
-.ShoppingCartComponent span {
+.cartWidgetContainer span {
     font-weight: bold;
     font-Size: 1.3rem;
 }

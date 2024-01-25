@@ -1,7 +1,8 @@
 import {Button} from "react-bootstrap";
 import {Card} from "react-bootstrap";
 import { useGetProductById } from "../hooks/useProduct";
-import { useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
+import ItemCount from "../components/ItemListContainer/ItemCount";
 
 export const ItemDetailContainer = () => {
 
@@ -23,7 +24,8 @@ export const ItemDetailContainer = () => {
 			} ) : null
 			}
 			<div>{productData.price}</div>
-			<Button variant="primary">go somewhere</Button>
+			<ItemCount productId={productData.id}/>
+{/* 			<Button variant="primary">Agregar al carrito</Button> */}
 		</Card.Body>
 	</Card>
 	);

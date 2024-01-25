@@ -8,7 +8,7 @@ import './ItemListContainer.css';
 const ItemListContainer = ({ productsData }) => {
     return (
         <div className="ItemListContainer">
-            {productsData.map ((products)=>{
+            {productsData?.map ((products)=>{
                 return (
                     <Card key={products.id} style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={ products.thumbnail } />
